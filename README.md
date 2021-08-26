@@ -1,4 +1,4 @@
-# Workshop 36 Group
+# Workshop 36 Group ♥🔨⚔😉🚩🏝
 
 ## Полезные ссылки
 
