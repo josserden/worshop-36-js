@@ -51,5 +51,5 @@ function openModal(e) {
 		if (e.code === 'Escape') {
 			instance.close();
 		}
-	});
+	}, {once: true});
 }
