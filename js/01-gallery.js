@@ -5,12 +5,8 @@ import refs from './refs.js';
 
 const { gallery } = refs;
 
-console.log(gallery);
-
-console.log(galleryItems);
-
 const markup = ({ preview, original, description }) => {
-	return `<div class="gallery__item">
+  return `<div class="gallery__item">
   <a class="gallery__link" href=${original}>
     <img
       class="gallery__image"
@@ -30,13 +26,13 @@ gallery.insertAdjacentHTML('beforeend', createGalleryMarkup);
 gallery.addEventListener('click', openModal);
 
 function openModal(e) {
-	e.preventDefault();
+  e.preventDefault();
 
-	if (e.target === e.currentTarget) {
-		return;
-	}
+  if (e.target === e.currentTarget) {
+    return;
+  }
 
-	const instance = basicLightbox.create(`
+  const instance = basicLightbox.create(`
     <div class="modal">
         <img
       src=${e.target.dataset.source}
@@ -45,11 +41,15 @@ function openModal(e) {
     </div>
 `);
 
-	instance.show();
+  instance.show();
 
-	window.addEventListener('keydown', (e) => {
-		if (e.code === 'Escape') {
-			instance.close();
-		}
-	}, {once: true});
+  window.addEventListener(
+    'keydown',
+    (e) => {
+      if (e.code === 'Escape') {
+        instance.close();
+      }
+    },
+    { once: true }
+  );
 }
